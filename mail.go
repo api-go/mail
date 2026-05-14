@@ -90,6 +90,54 @@ type RecvResult struct {
 	Tag  uint32
 }
 
+// NewWithConfig 是 New 的别名
+func NewWithConfig(cfg *MailboxConfig) (*Mailbox, error) {
+	return New(cfg)
+}
+
+// MustNew 创建一个邮件客户端实例，如果失败则 panic
+func MustNew(cfg *MailboxConfig) *Mailbox {
+	m, err := New(cfg)
+	if err != nil {
+		panic(err)
+	}
+	return m
+}
+
+// Send 使用默认邮箱发送邮件
+func Send(to []string, subject, content string, option *SendOption) error {
+	m := GetMailbox("default")
+	if m == nil {
+		return fmt.Errorf("default mailbox not configured")
+	}
+	return m.Send(to, subject, content, option)
+}
+
+// MustSend 使用默认邮箱发送邮件，如果失败则 panic
+func MustSend(to []string, subject, content string, option *SendOption) {
+	if err := Send(to, subject, content, option); err != nil {
+		panic(err)
+	}
+}
+
+// Recv 使用默认邮箱接收邮件
+func Recv(opt *RecvOption) (*RecvResult, error) {
+	m := GetMailbox("default")
+	if m == nil {
+		return nil, fmt.Errorf("default mailbox not configured")
+	}
+	return m.Recv(opt)
+}
+
+// MustRecv 使用默认邮箱接收邮件，如果失败则 panic
+func MustRecv(opt *RecvOption) *RecvResult {
+	res, err := Recv(opt)
+	if err != nil {
+		panic(err)
+	}
+	return res
+}
+
 // GetMailbox 获取或创建一个指定名称的邮件客户端实例
 func GetMailbox(name string, configs ...*MailboxConfig) *Mailbox {
 	instMu.RLock()

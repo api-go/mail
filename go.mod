@@ -3,10 +3,10 @@ module apigo.cc/go/mail
 go 1.26.1
 
 require (
-	apigo.cc/go/cast v1.3.0
-	apigo.cc/go/config v1.3.0
-	apigo.cc/go/file v1.3.0
-	apigo.cc/go/log v1.3.0
+	apigo.cc/go/cast v1.3.2
+	apigo.cc/go/file v1.3.1
+	apigo.cc/go/log v1.3.2
+	apigo.cc/go/safe v1.3.0
 	github.com/emersion/go-imap/v2 v2.0.0-beta.8
 	github.com/jaytaylor/html2text v0.0.0-20260303211410-1a4bdc82ecec
 	github.com/jhillyerd/enmime v1.3.0
@@ -14,10 +14,10 @@ require (
 )
 
 require (
+	apigo.cc/go/config v1.3.0 // indirect
 	apigo.cc/go/encoding v1.3.0 // indirect
 	apigo.cc/go/id v1.3.0 // indirect
 	apigo.cc/go/rand v1.3.0 // indirect
-	apigo.cc/go/safe v1.3.0 // indirect
 	apigo.cc/go/shell v1.3.0 // indirect
 	github.com/cention-sany/utf7 v0.0.0-20170124080048-26cad61bd60a // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
