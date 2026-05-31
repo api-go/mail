@@ -5,6 +5,7 @@ go 1.26.1
 require (
 	apigo.cc/go/cast v1.3.3
 	apigo.cc/go/file v1.3.2
+	apigo.cc/go/jsmod v1.0.1
 	apigo.cc/go/log v1.3.4
 	apigo.cc/go/safe v1.3.1
 	github.com/emersion/go-imap/v2 v2.0.0-beta.8
@@ -26,6 +27,7 @@ require (
 	github.com/emersion/go-message v0.18.2 // indirect
 	github.com/emersion/go-sasl v0.0.0-20241020182733-b788ff22d5a6 // indirect
 	github.com/fatih/color v1.18.0 // indirect
+	github.com/go-test/deep v1.1.1 // indirect
 	github.com/gogs/chardet v0.0.0-20211120154057-b7413eaefb8f // indirect
 	github.com/mattn/go-colorable v0.1.14 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect

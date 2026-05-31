@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.0.4 (2026-05-31)
+- **新增**: 注册到 `jsmod`。支持低代码环境下的邮件发送与接收。
+  - 提供 `send`, `recv` 默认快捷操作。
+  - 支持通过 `get(name)` 进行多账户切换。
+- **摩擦消除**: 使用 `go/cast` 自动处理收件人列表等参数转换，支持 JS 侧传入单字符串或数组。
+
 ## v1.0.1 (2026-05-13)
 ### 重大重构 (Breaking Changes)
 - **移除 Must 系列函数**: 移除了 `MustSend`, `MustRecv`。建议结合 `apigo.cc/go/cast` 的 `cast.As` 实现无摩擦调用。
