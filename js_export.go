@@ -7,19 +7,23 @@ import (
 
 func init() {
 	jsmod.Register("mail", map[string]any{
-		// 默认邮箱操作
-		"send": func(to any, subject, content string, option *SendOption) error {
+		// 默认邮箱操作 (对齐 PascalCase)
+		"Send": func(to any, subject, content string, option *SendOption) error {
 			var toList []string
 			cast.Convert(&toList, to)
 			return Send(toList, subject, content, option)
 		},
-		"recv": func(opt *RecvOption) (*RecvResult, error) {
+		"Recv": func(opt *RecvOption) (*RecvResult, error) {
 			return Recv(opt)
 		},
 
-		// 多实例获取
-		"mailbox": func(name string) *jsMailbox {
-			m := GetMailbox(name)
+		// 多实例获取 (对齐 PascalCase，支持可选参数)
+		"Mailbox": func(name *string) *jsMailbox {
+			target := "default"
+			if name != nil {
+				target = *name
+			}
+			m := GetMailbox(target)
 			if m == nil {
 				return nil
 			}
@@ -27,8 +31,8 @@ func init() {
 		},
 
 		// 辅助工具
-		"formatAddr": FormatAddr,
-		"parseAddr":  ParseAddr,
+		"FormatAddr": FormatAddr,
+		"ParseAddr":  ParseAddr,
 	})
 }
 
