@@ -24,3 +24,8 @@
 - **单元测试**: `go test -v ./...` 通过 (2026-06-21)。
 - **并发安全性**: 经过 `sync.RWMutex` 保护，支持多协程下注册 Handler 及发送。
 - **JS 错误调用栈**: JS 桥接层改用具名导出并使用 `jsmod.MakeError` 包裹错误，确保 JS 抛出异常时携带准确的 Go 运行时堆栈。
+
+## v1.5.8 发布验证（2026-10-10）
+
+- GOWORK=off go test -v ./... 与 go test -bench=. ./... 通过，依赖均为已发布 tag。
+- API 以 GOWORK=off go doc 与导出源码交叉核对（getExports 工具不可用）。
