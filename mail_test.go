@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
-	"apigo.cc/go/cast"
-	"apigo.cc/go/file"
-	"apigo.cc/go/mail"
-	"apigo.cc/go/safe"
+	"github.com/api-go/cast"
+	"github.com/api-go/file"
+	"github.com/api-go/mail"
+	"github.com/api-go/safe"
 )
 
 func TestMail(t *testing.T) {

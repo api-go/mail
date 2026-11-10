@@ -3,7 +3,7 @@ package mail
 import (
 	"time"
 
-	"apigo.cc/go/safe"
+	"github.com/api-go/safe"
 )
 
 // Config 邮件模块配置

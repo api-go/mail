@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io"
 
-	"apigo.cc/go/file"
+	"github.com/api-go/file"
 	"github.com/jaytaylor/html2text"
 	"gopkg.in/gomail.v2"
 )

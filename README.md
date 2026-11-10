@@ -28,7 +28,7 @@ mail:
 
 ### 多实例管理
 ```go
-import "apigo.cc/go/mail"
+import "github.com/api-go/mail"
 
 // 获取默认实例并注册回调
 mbox := mail.GetMailbox("default") 

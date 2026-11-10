@@ -29,3 +29,13 @@
 
 - GOWORK=off go test -v ./... 与 go test -bench=. ./... 通过，依赖均为已发布 tag。
 - API 以 GOWORK=off go doc 与导出源码交叉核对（getExports 工具不可用）。
+
+## GitHub migration validation (pending release)
+
+Module paths and internal dependency versions are migrated. Development verification uses GOWORK=off and explicit sibling replacements; remove these replacements before release. See migration validation logs for actual results. Existing unrelated working changes are preserved and require separate review.
+
+API inventory verification: `GOWORK=off go doc` succeeded; output retained in the migration validation directory. Source exports were preserved by the path migration.
+
+## GitHub release verification
+
+GOWORK=off go test -v ./... and go test -bench=. ./... passed using published GitHub dependencies, without local replacements. go mod verify passed.

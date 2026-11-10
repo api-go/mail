@@ -6,7 +6,7 @@ import (
 	"runtime"
 	"time"
 
-	"apigo.cc/go/cast"
+	"github.com/api-go/cast"
 	"github.com/emersion/go-imap/v2"
 	"github.com/emersion/go-imap/v2/imapclient"
 	"github.com/jhillyerd/enmime"

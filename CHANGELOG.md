@@ -1,3 +1,7 @@
+## [v1.5.9] - 2026-11-10
+
+- 迁移至 github.com/api-go/mail，同步内部模块路径与依赖。
+
 # CHANGELOG
 
 ## [v1.5.8] - 2026-10-10
@@ -7,7 +11,7 @@
 - **依赖对齐**: 升级 `config`、`file` 与 `log` 至当前已发布版本。
 
 ## v1.5.5 (2026-09-05)
-- **依赖对齐**: 升级全部 `apigo.cc/go/*` 依赖至当前已发布版本。
+- **依赖对齐**: 升级全部 `github.com/api-go/*` 依赖至当前已发布版本。
 
 ## v1.5.4 (2026-07-18)
 - **依赖校验修复**: 更新 `go.sum` 为当前可验证的依赖 checksum。
@@ -24,7 +28,7 @@
 
 ## v1.0.1 (2026-05-13)
 ### 重大重构 (Breaking Changes)
-- **移除 Must 系列函数**: 移除了 `MustSend`, `MustRecv`。建议结合 `apigo.cc/go/cast` 的 `cast.As` 实现无摩擦调用。
+- **移除 Must 系列函数**: 移除了 `MustSend`, `MustRecv`。建议结合 `github.com/api-go/cast` 的 `cast.As` 实现无摩擦调用。
 - **配置结构升级**: `MailboxConfig.Password` 更改为 `*safe.SafeBuf` 以提升安全性。
 
 ### 新特性 (New Features)
