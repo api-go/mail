@@ -20,6 +20,7 @@ require (
 	github.com/api-go/id v1.5.10 // indirect
 	github.com/api-go/rand v1.5.5 // indirect
 	github.com/api-go/shell v1.5.9 // indirect
+	github.com/api-go/timer v1.5.1 // indirect
 	github.com/cention-sany/utf7 v0.0.0-20170124080048-26cad61bd60a // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/clipperhouse/displaywidth v0.10.0 // indirect
@@ -46,3 +47,7 @@ require (
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
+
+replace github.com/api-go/timer => ../timer
+
+replace github.com/api-go/log => ../log

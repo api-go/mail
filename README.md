@@ -3,7 +3,7 @@
 极致精简的高性能邮件客户端，支持 SMTP 发送与 IMAP 接收，集成 `starter.Service` 支持后台自动监听，并提供多实例管理。
 
 ## 设计哲学
-*   **统一性**: 与 `apigo.cc/go` 基础设施深度集成（Log, Config, Cast, Safe, Starter）。
+*   **统一性**: 与 `github.com/api-go/*` 基础设施深度集成（Log, Config, Cast, Safe, Starter）。
 *   **服务化**: 支持作为 `starter.Service` 运行，通过规则过滤实现多实例后台自动处理。
 *   **多实例**: 支持通过 `Get(name)` 管理多个邮箱账号。
 *   **安全性**: 强制使用 `safe.SafeBuf` 保护内存中的密码。
@@ -83,3 +83,7 @@ for _, m := range res.List {
 ## v1.5.8 依赖基线
 
 本版本对齐 Log v1.5.17 与发布时模块索引中的上游已发布依赖；公开 API 保持兼容。
+
+### 实时日志开发联动（未发布，2026-11-12）
+
+本次通过 go.mod 的显式本地 replace 联动 timer、log，不依赖 go.work。文件日志默认采用 `.gz` + 同文件级 `.dict`；两份文件必须一起管理，使用 logv 或应用内置 log/logv 读取。`NoCompress=true` 保留旧明文格式。发布前须按依赖顺序发布新版本并移除临时 replace；当前索引版本仍表示已发布版本。
