@@ -84,6 +84,11 @@ for _, m := range res.List {
 
 本版本对齐 Log v1.5.17 与发布时模块索引中的上游已发布依赖；公开 API 保持兼容。
 
-### 实时日志开发联动（未发布，2026-11-12）
+### 实时压缩日志（v1.5.10）
 
-本次通过 go.mod 的显式本地 replace 联动 timer、log，不依赖 go.work。文件日志默认采用 `.gz` + 同文件级 `.dict`；两份文件必须一起管理，使用 logv 或应用内置 log/logv 读取。`NoCompress=true` 保留旧明文格式。发布前须按依赖顺序发布新版本并移除临时 replace；当前索引版本仍表示已发布版本。
+正式依赖已按顺序发布，go.mod 不保留本地开发 replace。文件日志默认采用 `.gz` + 同文件级 `.dict`，两份文件须一起管理；通过 logv 或内置 log/logv 读取，NoCompress=true 可保留明文。
+
+
+### Release v1.5.10 — 2026-11-12
+
+Released GitHub dependencies; no local development replacements. Full tests and benchmarks validated with GOWORK=off.
