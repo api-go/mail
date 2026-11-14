@@ -4,10 +4,10 @@ go 1.26.1
 
 require (
 	github.com/api-go/cast v1.5.9
-	github.com/api-go/file v1.5.10
+	github.com/api-go/file v1.5.11
 	github.com/api-go/jsmod v1.5.6
-	github.com/api-go/log v1.5.19
-	github.com/api-go/safe v1.5.5
+	github.com/api-go/log v1.5.21
+	github.com/api-go/safe v1.5.6
 	github.com/emersion/go-imap/v2 v2.0.0-beta.8
 	github.com/jaytaylor/html2text v0.0.0-20260303211410-1a4bdc82ecec
 	github.com/jhillyerd/enmime v1.3.0
@@ -15,7 +15,7 @@ require (
 )
 
 require (
-	github.com/api-go/config v1.5.9 // indirect
+	github.com/api-go/config v1.5.10 // indirect
 	github.com/api-go/encoding v1.5.9 // indirect
 	github.com/api-go/id v1.5.10 // indirect
 	github.com/api-go/rand v1.5.5 // indirect
